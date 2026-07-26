@@ -1,0 +1,232 @@
+:root {
+  --ink: #16261c;
+  --ink-soft: #4a564d;
+  --paper: #edeee7;
+  --paper-raised: #f7f7f2;
+  --brass: #9c7a3c;
+  --brass-dark: #7d6130;
+  --redline: #a63d40;
+  --line: #cdc6b0;
+  --radius: 3px;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+.navbar {
+  background-color: var(--ink) !important;
+  border-bottom: 3px solid var(--brass);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--paper-raised) !important;
+}
+
+.navbar-brand .mark { color: var(--brass); }
+
+h1, h2, h3, h4, h5, .card-title {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.card {
+  background-color: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--ink);
+  box-shadow: none;
+}
+
+.card.tab-payment     { border-top-color: #5c7a5e; }
+.card.tab-confidential{ border-top-color: #6a5a8c; }
+.card.tab-termination { border-top-color: var(--redline); }
+.card.tab-liability   { border-top-color: #b6772f; }
+.card.tab-renewal     { border-top-color: #3f6f8c; }
+.card.tab-warranty    { border-top-color: #4a8073; }
+
+.card-body { padding: 1.6rem; }
+
+.btn {
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+}
+
+.btn-primary {
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #223626;
+  border-color: #223626;
+}
+
+.btn-success {
+  background-color: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink);
+}
+.btn-success:hover, .btn-success:focus {
+  background-color: var(--brass-dark);
+  border-color: var(--brass-dark);
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  color: var(--ink);
+  border-color: var(--line);
+  background: transparent;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper-raised);
+}
+
+.dropzone {
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  background-color: var(--paper-raised);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  cursor: pointer;
+}
+.dropzone.dragover {
+  border-color: var(--brass);
+  background-color: #f2ecdd;
+}
+.dropzone .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.dropzone input[type="file"] { display: none; }
+.file-chosen {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brass-dark);
+  margin-top: 0.75rem;
+}
+
+.stamp {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  border: 2px solid var(--redline);
+  color: var(--redline);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius);
+  transform: rotate(-4deg);
+  opacity: 0.85;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.clause-marker {
+  width: 6px;
+  border-radius: 2px;
+  margin-right: 0.9rem;
+  background-color: var(--ink);
+  flex-shrink: 0;
+}
+.clause-marker.payment       { background-color: #5c7a5e; }
+.clause-marker.confidential  { background-color: #6a5a8c; }
+.clause-marker.termination   { background-color: var(--redline); }
+.clause-marker.liability     { background-color: #b6772f; }
+.clause-marker.renewal       { background-color: #3f6f8c; }
+.clause-marker.warranty      { background-color: #4a8073; }
+
+.clause-row, .info-row {
+  border-bottom: 1px dotted var(--line);
+  padding: 0.65rem 0;
+}
+.clause-row:last-child, .info-row:last-child { border-bottom: none; }
+
+.risk-flag {
+  display: inline-block;
+  background-color: #fbeceb;
+  color: var(--redline);
+  border: 1px solid #e3b8b8;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius);
+  margin: 0.15rem 0.3rem 0.15rem 0;
+}
+
+#chatBox {
+  background-color: var(--paper-raised);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px);
+  background-size: 100% 1.8rem;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem !important;
+}
+
+.chat-msg { margin-bottom: 0.9rem; line-height: 1.5; }
+.chat-msg .who {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+.chat-msg.user .who { color: var(--ink-soft); }
+.chat-msg.ai .who { color: var(--brass-dark); }
+
+.form-control:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 0.15rem rgba(156, 122, 60, 0.2);
+}
+
+.alert-warning {
+  background-color: #fbeceb;
+  border-color: #e3b8b8;
+  color: var(--redline);
+  border-radius: var(--radius);
+}
+
+a { color: var(--brass-dark); }
+a:hover { color: var(--brass); }
+
+::selection { background: #e3d4b0; }

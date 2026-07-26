@@ -1,0 +1,20 @@
+Section,Content
+Summary,"This Employment Agreement is between ABC Technologies Pvt. Ltd., a company based in Bangalore, India, and John Smith, who will work as a Software Engineer. John will start his job on January 15, 2026, and will earn an annual salary of INR 9,00,000, paid monthly. He is expected to work 40 hours a week from Monday to Friday. John must keep any confidential information he learns at work private, both during and after his employment. Any work he creates while employed will belong to the company. He is entitled to 20 days of paid vacation and 10 days of sick leave each year. Either John or the company can end the agreement with a 30-day written notice. The agreement follows Indian law."
+Clause - Payment Clauses,"The Employee shall receive an annual salary of INR 9,00,000, payable monthly"
+Clause - Confidentiality,"The Employee agrees not to disclose confidential information, trade secrets, source code, customer data, or proprietary business information to any third party during or after employment."
+Clause - Termination,Either party may terminate this Agreement by providing 30 days written notice
+Clause - Liability,Not found
+Clause - Renewal,Not found
+Clause - Warranty,Not found
+Risk - missing_clauses,
+Risk - high_risk_statements,
+Risk - penalties,
+Risk - compliance_issues,
+Info - parties_involved,"ABC Technologies Pvt: Ltd
+John Smith"
+Info - effective_date,15 January 2026
+Info - expiry_date,
+Info - key_dates,"date: 15 January 2026
+event: Commencement of employment
+date: 15 January 2026
+event: Date of signing the agreement"

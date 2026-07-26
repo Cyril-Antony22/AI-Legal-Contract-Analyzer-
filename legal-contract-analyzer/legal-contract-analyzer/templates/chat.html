@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<span class="eyebrow">Consultation</span>
+<h4 class="mb-4">Ask AI about: {{ analysis.filename }}</h4>
+
+<div class="card">
+    <div class="card-body">
+        <div id="chatBox" class="mb-3" style="height: 380px; overflow-y: auto;">
+            {% for msg in analysis.chat_history %}
+                <div class="chat-msg {{ 'user' if msg.role == 'user' else 'ai' }}">
+                    <span class="who">{{ "You asked" if msg.role == "user" else "AI answered" }}</span>
+                    {{ msg.content }}
+                </div>
+            {% endfor %}
+            {% if not analysis.chat_history %}
+                <p class="text-muted mb-0">No questions yet — ask something below to get started.</p>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <input type="text" id="questionInput" class="form-control"
+                   placeholder="e.g. What is the contract duration?">
+            <button class="btn btn-primary" onclick="askQuestion('{{ contract_id }}')">Ask</button>
+        </div>
+        <div class="section-label mt-2">
+            Try: "What is the contract duration?" · "Who are the parties?" ·
+            "What happens if payment is delayed?" · "What are the termination conditions?"
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
